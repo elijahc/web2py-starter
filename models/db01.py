@@ -20,7 +20,7 @@ if request.global_settings.web2py_version < "2.14.1":
 from gluon.contrib.appconfig import AppConfig
 myconf = AppConfig(reload=DEBUG)
 current.myconf = myconf
-myconf_env = myconf.get('environment.type')
+myconf_env = myconf.take('environment.type',cast=str)
 current.myconf_env = myconf_env
 
 # set db connection
